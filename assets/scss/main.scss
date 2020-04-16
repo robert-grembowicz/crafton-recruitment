@@ -1,0 +1,33 @@
+// 7-1 Sass Architecture
+// https://sass-guidelin.es/#the-7-1-pattern
+
+// Abstracts
+@import "./abstracts/functions";
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+// Vendors
+@import "./vendors/googlefonts";
+@import "./vendors/normalize";
+
+// Base
+@import "./base/base";
+@import "./base/helpers";
+@import "./base/fonts";
+@import "./base/typography";
+
+// Components
+@import "./components/buttons";
+@import "./components/box";
+@import "./components/form";
+@import "./components/slider";
+
+// Layout
+@import "./layout/header";
+@import "./layout/footer";
+
+// Pages
+@import "./pages/home";
+
+// Themes
+@import "./themes/default";

@@ -1,0 +1,42 @@
+<section class="form-hld">
+    <h3 class="form__header">
+        Nie znalazłeś odpowiedniego kontaktu?
+        <span class="form__header--accent">Skorzystaj z formularza.</span>
+    </h3>
+    <form action="form.php" method="get" class="form">
+        <div class="form__item form__item--small">
+            <input class="input" type="text" name="name" id="name" placeholder="" />
+            <label for="name">Imię</label>
+        </div>
+        <div class="form__item form__item--small">
+            <input class="input" type="text" name="surname" id="surname" placeholder="" />
+            <label for="surname">Nazwisko</label>
+        </div>
+        <div class="form__item">
+            <input class="input" type="text" name="mail" id="mail" placeholder="" />
+            <label for="mail">Adres e-mail</label>
+        </div>
+        <div class="form__item">
+            <textarea class="input" name="text" id="text" cols="30" rows="10"></textarea>
+            <label for="text">Treść wiadomości</label>
+        </div>
+        <div class="form__item--checkbox">
+            <label class="checkbox__label" for="agree">
+                <input type="checkbox" id="agree" name="agree" />
+                <span class="checkbox__custom"></span>
+                <div>
+                    <span class="text">
+                        Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumieniu
+                        ustawy z dnia 29 sierpnia 1997 roku o ochronie danych osobowych oraz
+                        ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne w celach
+                        marketingowych przez Collegium Da Vinci i oświadczam, iż podanie
+                        przeze mnie danych osobowych jest dobrowolne oraz iż zostałem
+                        poinformowany o prawie żądania dostępu do moich danych osobowych,
+                        ich zmiany oraz usunięcia.
+                    </span>
+                </div>
+            </label>
+        </div>
+        <button class="btn" type="send">wyślij</button>
+    </form>
+</section>

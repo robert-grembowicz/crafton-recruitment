@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// Header of the site/application
+// -----------------------------------------------------------------------------
+
+.header {
+  position: absolute;
+  top: 39px;
+  left: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateX(-50%);
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  &__element {
+    margin-left: 81px;
+    font-size: 16px;
+    color: $c-white;
+    text-decoration: none;
+    transition: color 0.2s;
+    &:hover {
+      color: rgba($c-white, 0.7);
+    }
+  }
+}

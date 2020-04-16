@@ -1,0 +1,123 @@
+.box-hld {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 220px 0;
+  }
+  
+  .box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  
+  .box__title {
+    color: $c-accent-dark;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.67;
+  }
+  
+  .box__description {
+    margin-right: 89px;
+    font-size: 18px;
+    line-height: 1.78;
+    &--accent {
+      color: $c-accent;
+    }
+    .box--reverse & {
+      margin-right: 0;
+      margin-left: 89px;
+    }
+  }
+  
+  .box__description__footer {
+    ul {
+      padding: 0;
+      list-style: none;
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 14px;
+          height: 10px;
+          margin-right: 20px;
+          background-image: url("../../images/arrow.svg");
+          background-size: cover;
+        }
+      }
+    }
+  }
+  
+  .box__img {
+    position: relative;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    flex-shrink: 0;
+    max-height: 513px;
+    &__ribbon {
+      position: absolute;
+      top: 26px;
+      left: -81px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 40px;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 110, 133, 1) 0%,
+        rgba(2, 165, 199, 1) 100%
+      );
+      transform: rotate(-45deg);
+      p {
+        font-size: 22px;
+        font-weight: 700;
+        color: $c-white;
+      }
+    }
+  }
+  
+  .player {
+    cursor: pointer;
+  }
+  
+  .player__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 94px;
+    height: 94px;
+    background-color: rgba($c-accent, 0.7);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 33px;
+      width: 38px;
+      height: 43px;
+      background: url("../../images/play-button.svg");
+      transform: translateY(-50%);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba($c-accent, 0.2);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+  }
+  
