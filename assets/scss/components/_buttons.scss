@@ -1,19 +1,35 @@
 .btn {
-    min-width: 118px;
-    height: 50px;
-    font-size: 14px;
-    font-weight: 400;
-    color: $c-white;
-    border-radius: 25px;
-    background: $c-accent;
-    border: 0;
-    outline: 0;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-    margin: 0 auto;
-    cursor: pointer;
+  padding: 0 32px;
+  height: 50px;
+  font-size: 14px;
+  font-weight: 400;
+  color: $c-white;
+  border-radius: 25px;
+  background: $c-accent;
+  border: 0;
+  outline: 0;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0 auto;
+  cursor: pointer;
+  box-sizing: border-box;
+  &:hover {
+    background-color: $c-accent-dark;
+  }
+  &--primary {
+    background: $c-white;
+    color: $c-accent-dark;
     &:hover {
-      background-color: $c-accent-dark;
+      background: $c-accent-dark;
+      color: $c-white;
     }
   }
-  
+  &--secondary {
+    background-color: transparent;
+    border: 2px solid $c-white;
+    &:hover {
+      background-color: $c-white;
+      color: $c-accent-dark;
+    }
+  }
+}

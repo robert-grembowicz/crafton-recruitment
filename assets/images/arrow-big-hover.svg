@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.12" height="21" viewBox="0 0 30.12 21">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffcd19;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="nawigacja_slajdera" data-name="nawigacja slajdera" class="cls-1" d="M1267.89,835.6H1290l-8.36,8.4h5.91l10.46-10.5L1287.55,823h-5.91l8.36,8.4h-22.11v4.2Z" transform="translate(-1267.88 -823)"/>
+</svg>

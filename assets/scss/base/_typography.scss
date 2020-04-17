@@ -6,3 +6,13 @@
 //
 // example:
 // https://github.com/HugoGiraudel/sass-boilerplate/blob/master/stylesheets/base/_typography.scss
+
+.h1 {
+  color: $c-white;
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 1.5;
+  span {
+    color: $c-accent;
+  }
+}

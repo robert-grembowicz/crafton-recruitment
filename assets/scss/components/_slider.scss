@@ -1,7 +1,81 @@
 .slider {
-    img {
-      width: 100%;
-      height: 100vh;
-    }
+  position: relative;
+  img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
-  
+}
+
+.slides {
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s;
+  &--active {
+    opacity: 1;
+  }
+}
+
+.slider__text {
+  position: absolute;
+  bottom: 113px;
+  z-index: 9;
+  width: 100%;
+  > * {
+    max-width: 1190px;
+    margin: 0 auto;
+  }
+}
+
+.slider__buttons {
+  margin-top: 52px;
+  button:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.slider__dots {
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  transform: translateY(-50%);
+  z-index: 11;
+}
+.slider__dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: $c-white;
+  border-radius: 50%;
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-bottom: 28px;
+  }
+  &--active {
+    background: $c-yellow;
+  }
+}
+
+.slider__arrows {
+  margin-top: 92px;
+}
+
+.slider__arrow {
+  width: 31px;
+  height: 21px;
+  display: inline-block;
+  background: url("../../images/arrow-big.svg") no-repeat;
+  cursor: pointer;
+  transition: background 0.2s;
+  &--left {
+    margin-right: 12px;
+    transform: rotate(180deg);
+  }
+  &:hover {
+    background: url("../../images/arrow-big-hover.svg") no-repeat;
+  }
+}
