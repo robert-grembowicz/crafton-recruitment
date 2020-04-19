@@ -2,6 +2,7 @@ import popup from "./module/popup";
 import youtube from "./module/youtube";
 import scrollMenu from "./module/scrollMenu";
 import slider from "./module/slider";
+import validation from "./module/validation";
 
 scrollMenu();
 
@@ -12,3 +13,5 @@ youtube((link) => {
   const mainPopup = new popup(link);
   mainPopup.create();
 });
+
+validation();
