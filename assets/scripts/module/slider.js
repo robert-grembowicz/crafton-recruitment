@@ -14,7 +14,6 @@ export default class slider {
   create() {
     const slider = document.querySelector(this.sliderClass);
     const slides = slider.children;
-    slider.style.height = `${slides[0].getBoundingClientRect().height}px`;
     [...slides].forEach((element) => {
       element.classList.add("slide");
     });
