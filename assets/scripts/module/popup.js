@@ -1,8 +1,9 @@
 export default class popup {
-  constructor(source, width = 640, height = 480) {
+  constructor(source, width = 640, height = 480, text) {
     this.source = source;
     this.width = width;
     this.height = height;
+    this.text = text;
   }
 
   create() {
@@ -12,12 +13,24 @@ export default class popup {
     const popupWindow = document.createElement("div");
     popupWindow.classList.add("popup__window");
 
-    const popupVideo = document.createElement("iframe");
-    popupVideo.setAttribute("width", this.width);
-    popupVideo.setAttribute("height", this.height);
-    popupVideo.setAttribute("src", this.source);
+    let popupSource = null;
 
-    popupWindow.appendChild(popupVideo);
+    if (this.source) {
+      popupSource = document.createElement("iframe");
+      popupSource.setAttribute("src", this.source);
+    }
+
+    if (this.text) {
+      popupSource = document.createElement("p");
+      popupSource.innerHTML = this.text;
+    }
+    popupSource.style.width = `${this.width}px`;
+    popupSource.style.height = `${this.height}px`;
+
+    popupSource.setAttribute("width", this.width);
+    popupSource.setAttribute("height", this.height);
+
+    popupWindow.appendChild(popupSource);
     popup.appendChild(popupWindow);
 
     this.close(popup, popupWindow);

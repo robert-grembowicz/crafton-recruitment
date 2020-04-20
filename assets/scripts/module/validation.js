@@ -1,3 +1,5 @@
+import popup from "./popup";
+
 export default function () {
   let forms = document.querySelectorAll(".js-validate");
 
@@ -12,13 +14,17 @@ export default function () {
     input.classList.add("warning");
   };
 
-  const validation = (input, e) => {
+  const validation = (input, e, errors) => {
     if (input.value.length <= 2 && input.type != "checkbox") {
       outline(input, e);
+      errors.push(`${input.labels[0].textContent} - zbyt krótka treść`);
     } else {
       switch (input.name) {
         case "mail":
-          validateEmail(input.value) == false ? outline(input, e) : null;
+          if (validateEmail(input.value) == false) {
+            outline(input, e);
+            errors.push(`${input.labels[0].textContent} - niepoprawny e-mail`);
+          }
           break;
         case "agree":
           input.checked == false ? outline(input, e) : null;
@@ -31,13 +37,17 @@ export default function () {
     form.addEventListener("submit", (e) => {
       const inputs = form.querySelectorAll("input");
       const textareas = form.querySelectorAll("textarea");
+      const errors = [];
 
       const allInputs = [...inputs, ...textareas];
-      console.log(allInputs);
       allInputs.forEach((input) => {
         input.classList.remove("warning");
-        validation(input, e);
+        validation(input, e, errors);
       });
+      if (errors.length > 0) {
+        const mainPopup = new popup(null, 400, 300, errors.join(" <br> "));
+        mainPopup.create();
+      }
     });
   });
 }

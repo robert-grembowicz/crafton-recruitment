@@ -1,9 +1,14 @@
+import LazyLoad from "vanilla-lazyload";
 import popup from "./module/popup";
 import youtube from "./functions/youtube";
 import scrollMenu from "./functions/scrollMenu";
 import slider from "./module/slider";
 import validation from "./module/validation";
 import toggleMobileMenu from "./functions/toggleMobileMenu";
+import map from "./libraries/leaflet";
+
+const myLazyLoad = new LazyLoad();
+myLazyLoad.update();
 
 scrollMenu();
 toggleMobileMenu();
@@ -17,3 +22,5 @@ youtube((link) => {
 });
 
 validation();
+
+map();

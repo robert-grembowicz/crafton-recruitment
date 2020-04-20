@@ -46,6 +46,14 @@ export default class slider {
     slider.parentNode.appendChild(fragment);
   }
 
+  dotActive(activeDot) {
+    const dots = document.querySelectorAll(".slider__dot");
+    [...dots].map((dot) => {
+      dot.classList.remove("slider__dot--active");
+    });
+    activeDot.classList.add("slider__dot--active");
+  }
+
   dotClick(slides) {
     const dots = document.querySelectorAll(".slider__dot");
     [...dots].map((dot, i) => {
@@ -54,10 +62,7 @@ export default class slider {
           elem.classList.remove("slide--active");
         });
         slides[i].classList.add("slide--active");
-        [...dots].map((dot) => {
-          dot.classList.remove("slider__dot--active");
-        });
-        e.target.classList.add("slider__dot--active");
+        this.dotActive(e.target);
       });
     });
   }
@@ -82,6 +87,8 @@ export default class slider {
     const arrowRight = document.querySelector(".slider__arrow--right");
     const arrowLeft = document.querySelector(".slider__arrow--left");
 
+    const dots = document.querySelectorAll(".slider__dot");
+
     const changeSlide = (action) => {
       let count = null;
       [...slides].forEach((slide, i) => {
@@ -89,9 +96,11 @@ export default class slider {
           slide.classList.remove("slide--active");
           if (action == "plus") {
             slides.length <= i + 1 ? (count = 0) : (count = i + 1);
+            this.dotActive(dots[count]);
           }
           if (action == "minus") {
             i == 0 ? (count = slides.length - 1) : (count = i - 1);
+            this.dotActive(dots[count]);
           }
         }
       });

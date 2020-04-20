@@ -72,7 +72,7 @@
   display: inline-block;
   background: url("../../images/arrow-big.svg") no-repeat;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
   &--left {
     margin-right: 12px;
     transform: rotate(180deg);
