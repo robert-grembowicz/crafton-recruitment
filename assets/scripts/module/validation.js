@@ -20,15 +20,15 @@ export default function () {
       errors.push(`${input.labels[0].textContent} - zbyt krótka treść`);
     } else {
       switch (input.name) {
-        case "mail":
-          if (validateEmail(input.value) == false) {
-            outline(input, e);
-            errors.push(`${input.labels[0].textContent} - niepoprawny e-mail`);
-          }
-          break;
-        case "agree":
-          input.checked == false ? outline(input, e) : null;
-          break;
+      case "mail":
+        if (validateEmail(input.value) == false) {
+          outline(input, e);
+          errors.push(`${input.labels[0].textContent} - niepoprawny e-mail`);
+        }
+        break;
+      case "agree":
+        input.checked == false ? outline(input, e) : null;
+        break;
       }
     }
   };
